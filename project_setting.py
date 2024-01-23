@@ -28,8 +28,7 @@ class Apimodel:
 
 # View
 class Apiview:
-    @staticmethod
-    def get_Api_key():
+    def get_Api_key(self):
         if len(sys.argv)==2:
             return sys.argv[1]
         elif len(sys.argv)>2:
@@ -38,8 +37,7 @@ class Apiview:
         else:
             return input("키를 입력해주세요:")
 
-    @staticmethod
-    def show_result(result):
+    def show_result(self,result):
         print(result)
 
 
