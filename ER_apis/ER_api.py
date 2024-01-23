@@ -59,10 +59,11 @@ def request_to_ER_api(request_url: str, header_dict: dict = None) -> dict:
 
 def game_api(game_id: int, str_game_type_list: list) -> bool:
     integer_game_type_list = translate_game_mode_str_to_int(str_game_type_list)
-
+    print("game_id",game_id)
     responced_game_match_data = request_to_ER_api(
         request_url=f"https://open-api.bser.io/v1/games/{game_id}"
     )
+    print("responced",responced_game_match_data)
     if responced_game_match_data == None:
         return False
     else:
