@@ -11,6 +11,7 @@ class Apimodel:
         api_key_dic = {"token": key}
         with open("setting\secret.json", "w") as file:
             json.dump(api_key_dic, file)
+            print("work")
 
     def test_Api_key(self):
         if game_api:
