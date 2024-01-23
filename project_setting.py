@@ -18,7 +18,13 @@ class Apimodel:
             return os.path.isfile("./datas/Ver10.0_Rank_31460173.json")
         else:
             return False
-
+    def create_folders(self):
+        if os.path.exists("setting") == False:
+            os.mkdir("setting")
+        if os.path.exists("datas") == False:
+            os.mkdir("datas")
+        if os.path.exists("origin_datas") == False:
+            os.mkdir("origin_datas")
 
 # View
 class Apiview:
@@ -43,9 +49,10 @@ class Apicontroller:
         self.model = model
         self.view = view
 
+    def create_folders(self):
+        self.model.create_folders()
+
     def get_api(self):
-        if os.path.exists("setting") == False:
-            os.mkdir("setting")
 
         while True:
             Api_key = self.view.get_Api_key()
@@ -66,11 +73,11 @@ class Apicontroller:
     def make_main_py(self):
         main=open('main.py', 'w')
         main.close()
-
-update_game_base_data()
 model = Apimodel()
 view = Apiview()
 controller = Apicontroller(model, view)
+controller.create_folders()
 controller.get_api()
 controller.get_test_case()
 controller.make_main_py()
+update_game_base_data()
