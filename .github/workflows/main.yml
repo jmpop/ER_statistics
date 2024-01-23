@@ -16,5 +16,5 @@ jobs:
         with:
           python-version: "3.10.6"
       - run: pip install -r requirements.txt
-      - run: python project_setting.py {secrets.ER_API_KEY}
+      - run: python project_setting.py ${{secrets.ER_API_KEY}}
       - run: python -m unittest.py
