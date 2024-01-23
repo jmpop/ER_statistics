@@ -2,7 +2,7 @@
 # from ER_datas.test import *
 import unittest
 
-print("5")
+print("10")
 class TestForeignTeam(unittest.TestCase):
     def test_true(self):
         print("c")
