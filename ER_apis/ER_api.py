@@ -11,7 +11,7 @@ SEASON_ID = 21
 
 
 def setting_header(param_dict: dict = {}) -> (dict, dict):
-    with open("setting/secret.json", "r", encoding="utf-8") as f:
+    with open("./setting/secret.json", "r", encoding="utf-8") as f:
         token = json.load(f)
     header_dict = {}
     header_dict.setdefault("x-api-key", token["token"])
